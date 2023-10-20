@@ -78,24 +78,64 @@ console.log(asciiArt);
   }
   else { (question[index] === "B") 
     console.log ( Tekst2)  
+    // stopt de game 
     return;
 }
 //
   
 
+
   question = ["A" , "B"];
   index = readlineSync.keyInSelect(question , 'Welke kies je ?!?  ');
   console.log ('jouw antword was ' + question[index]  );
+
+  const asciiart1 = `
+       __
+      /(o
+,-,  //  \\
+(,,,) ||  V
+(,,,,)\//
+(,,,/w)-'
+\,,/w)
+V/uu
+/ |
+| |
+o o
+\ |
+\,/  ,\|,.  \,/
+
+`;
+
+
+
+console.log(asciiart1)
+
+
+
 
   if (question[index] === "A"){
     console.log(Tekst3)
   }
   else if (question[index] === "B"){
     console.log ( Tekst4)
+      
   }
   
 
-  // stratks nog naar kijken 
+  const asciiart2=`
+                        
+                                  _____________________________________
+                                /                                      |
+                              /     ___                  _____          | 
+                            /     [    ]                {     }         |   
+                            |     |    |                |     |          |  
+                           |      -----                 ======            | 
+                           |        ____                      ____        |  
+                          _|_______/    \____________________/    \_______|_
+                                    \____/                    \____/
+                        
+        `
+        console.log( asciiart2)
   
   question = ["A" , "B" ];
   index = readlineSync.keyInSelect(question , 'Welke kies je ?!?  ');
@@ -111,16 +151,39 @@ console.log(asciiArt);
 
   
   // 
+const asciiart3 = `
+         ___________              __________                  
+        /  _______  |            /  _____   |  
+        | /       | |            | |     |  |
+        | |       | |            | |     |  |
+        | |=======| |            | |=====|  |
+        |           |            |          |
+        |========== |            |========= |
+                ___           ___
+        __     /   \\        /  \\        __
+       /  \\  /     \\      /    \\      /  \\
+      /    \\/      \\    /       \\    /    \\
+                     \\__/         \\__/      
+
+
+
+`
+console.log(asciiart3)
+
+
 
 question = ["A" , "B" ];
   index = readlineSync.keyInSelect(question , 'Welke kies je ?!?  ');
   console.log ('jouw antword was ' + question[index]  );
 
+
   if (question[index] === "A"){
-    console.log(Teskt7)
+    console.log(Teskt8)
   }
   else if (question[index] === "B"){
-    console.log ( Teskt8)
+    console.log ( Teskt7)
+    // stopt de game 
+    return
   
   }
   
@@ -137,6 +200,7 @@ question = ["A" , "B" ];
   }
   else if (question[index] === "B"){
     console.log ( Tekst10)
+    // stopt de game 
   return
   }
 
@@ -181,7 +245,7 @@ question = ["A" , "B" ];
   }
   else if (question[index] === "B"){
     console.log ( Tekst16)
-  return
+  
   }
 
    //
@@ -210,7 +274,7 @@ question = ["A" , "B" ];
     console.log ( Teskt20)
   }
 
-   //
+   
 
    question = ["A" , "B" ];
    index = readlineSync.keyInSelect(question , 'Welke kies je ?!?  ');
@@ -223,13 +287,25 @@ question = ["A" , "B" ];
      console.log ( Tekst22)
    }
    
-   
+   return ;
   }
 
-  playGame();
-  
-  
 
+
+  
+  // vragen als ze weer willen spelen 
+  var PlayAgain= "yes";
+
+const Yes = `YES`
+
+  while (PlayAgain === Yes.toLowerCase() )  {
+    playGame();
+    PlayAgain= readlineSync.question(" \n wana play agian ?!?");
+  } 
+
+  if (PlayAgain != Yes){
+    console.log( `Game Over...`)
+  };
    
    
  
